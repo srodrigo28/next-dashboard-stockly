@@ -9,22 +9,22 @@ TailwindCSS	Estilização utilitária rápida e responsiva
 TypeScript	Tipagem estática para maior segurança e produtividade
 Prisma ORM	ORM moderno e intuitivo para bancos SQL
 📦 Instalação
-# Clone o repositório
+## Clone o repositório
 git clone https://github.com/usuario/repositorio.git
 
-# Acesse o projeto
+## Acesse o projeto
 cd repositorio
 
-# Instale as dependências
+## Instale as dependências
 npm install
 
-# Configure as variáveis de ambiente
+## Configure as variáveis de ambiente
 cp .env.example .env
 
-# Execute as migrations do Prisma
+## Execute as migrations do Prisma
 npx prisma migrate dev
 
-# Inicie o servidor
+## Inicie o servidor
 npm run dev
 
 📁 Estrutura do Projeto

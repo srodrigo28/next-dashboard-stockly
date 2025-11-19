@@ -6,6 +6,12 @@ https://alunos.fullstackclub.com.br/area/produto/item/3815770
 * Estilização com Tailwind CSS 
 https://alunos.fullstackclub.com.br/area/produto/item/3815772
 
+
+* Otimização de Fontes & Imagens ultimo visto
+```
+https://alunos.fullstackclub.com.br/area/produto/item/3815773
+```
+
 * NeonTech, Postgres, Prisma & ORMs
 https://alunos.fullstackclub.com.br/area/produto/item/3815775
 
