@@ -1,8 +1,12 @@
-import Link from "next/link";
-import { Button } from "./ui/button";
+"use client"
+
 import { LayoutGridIcon, PackageIcon, ShoppingBasketIcon } from "lucide-react";
+import { usePathname } from "next/navigation";
+import SidebarButton from "./sidebar-button";
 
 const Sidebar = () => {
+    const pathName = usePathname()
+
     return(
         <div className="w-64 bg-white">
             {/* IMAGEM */}
@@ -12,24 +16,15 @@ const Sidebar = () => {
 
             {/* BOTÕES */}
             <div className="flex flex-col gap-2 p-2">
-                <Button asChild variant="ghost" className="justify-start gap-2" >
-                    <Link href="">
-                        <LayoutGridIcon />
-                         Dashboard
-                    </Link>
-                </Button>
-                <Button asChild variant="ghost" className="justify-start gap-2" >
-                     <Link href="">
-                        <PackageIcon />
-                        Produtos
-                    </Link>
-                </Button>
-                <Button asChild variant="ghost" className="justify-start gap-2" >
-                     <Link href="">
-                        <ShoppingBasketIcon />
-                        Vendas
-                    </Link>
-                </Button>
+                <SidebarButton href="/">
+                    <LayoutGridIcon size={24} />  Dashboard
+                </SidebarButton>
+                <SidebarButton href="/products">
+                    <PackageIcon size={24} />  Produtos
+                </SidebarButton>
+                 <SidebarButton href="/sales">
+                    <ShoppingBasketIcon size={24} />  Vendas
+                </SidebarButton>
             </div>
         </div>
     )
