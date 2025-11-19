@@ -129,6 +129,13 @@ exports.Prisma.SaleScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.CategoryScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.ProductScalarFieldEnum = {
   id: 'id',
   name: 'name',
@@ -159,6 +166,7 @@ exports.Prisma.QueryMode = {
 
 exports.Prisma.ModelName = {
   Sale: 'Sale',
+  Category: 'Category',
   Product: 'Product',
   SaleProduct: 'SaleProduct'
 };

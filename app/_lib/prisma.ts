@@ -1,44 +1,24 @@
-// código prisma typescript
-
+/* eslint-disable no-unused-vars */
+// app/_lib/prisma.ts
 import { PrismaClient } from "@/src/generated/prisma";
 
-/**
- * Cache global da instância do Prisma (apenas em desenvolvimento)
- * Necessário para evitar múltiplas conexões durante hot reload do Next.js
- */
 declare global {
-    // Corrigido: permite undefined (valor inicial antes da primeira criação)
-    var cachedPrisma: ReturnType<typeof createPrismaClient> | undefined;
+  // eslint-disable-next-line no-var
+  var cachedPrisma: ReturnType<typeof createPrismaClient>;
 }
 
 const createPrismaClient = () => {
-    return new PrismaClient().$extends({
-        result: {
-            product: {
-                status: {
-                    needs: { stock: true },
-                    compute(product) {
-                        if (product.stock <= 0) {
-                            return "OUT_OF_STOCK";
-                        }
-                        return "IN_STOCK"
-                    },
-                },
-            },
-        },
-    })
-}
+  return new PrismaClient();
+};
 
 let prisma: ReturnType<typeof createPrismaClient>;
-
-// Singleton com cache global (padrão oficial recomendado)
 if (process.env.NODE_ENV === "production") {
-    prisma = createPrismaClient();
+  prisma = createPrismaClient();
 } else {
-    if (!global.cachedPrisma) {
-        global.cachedPrisma = createPrismaClient();
-    }
-    prisma = global.cachedPrisma;
+  if (!global.cachedPrisma) {
+    global.cachedPrisma = createPrismaClient();
+  }
+  prisma = global.cachedPrisma;
 }
 
 export const db = prisma;

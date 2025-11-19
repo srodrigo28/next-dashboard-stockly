@@ -3,8 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node -e \"require('dotenv').config({path:'.env.local'}); if(!process.env.DATABASE_URL) throw new Error('DATABASE_URL não definida → crie .env.local'); console.log('Conexão OK');\" && next dev",
+    "dev1": "node -e \"require('dotenv').config({path:'.env.local'}); if(!process.env.DATABASE_URL) throw new Error('DATABASE_URL não definida → crie .env.local'); console.log('Conexão OK');\" && next dev",
     "build": "next build",
+
+    "db:migrate": "prisma migrate dev",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "db:seed": "tsx prisma/seed.ts",
+
     "start": "next start",
     "lint": "next lint",
     "test:products": "ts-node ./list-products.ts"
