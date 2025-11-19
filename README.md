@@ -1,5 +1,7 @@
 🚀 Dashboard – Projeto Fullstack Moderno
 
+
+
 Um dashboard moderno desenvolvido com foco em performance, acessibilidade e escalabilidade, utilizando um ecossistema de tecnologias atuais e robustas.
 
 🛠️ Tecnologias

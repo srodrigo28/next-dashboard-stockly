@@ -3,6 +3,10 @@ npm i prisma
 
 npx prisma init
 
+npm i @prisma/client
+
+npx prisma generate
+
 * config env
 
 * popular o prisma/schema.prisma
