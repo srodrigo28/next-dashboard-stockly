@@ -1,3 +1,7 @@
+import Link from "next/link";
+import { Button } from "./ui/button";
+import { LayoutGridIcon, PackageIcon, ShoppingBasketIcon } from "lucide-react";
+
 const Sidebar = () => {
     return(
         <div className="w-64 bg-white">
@@ -8,9 +12,24 @@ const Sidebar = () => {
 
             {/* BOTÕES */}
             <div className="flex flex-col gap-2 p-2">
-                <button className="px-6 py-3">Dashboard</button>
-                <button className="px-6 py-3">Produtos</button>
-                <button className="px-6 py-3">Vendas</button>
+                <Button asChild variant="ghost" className="justify-start gap-2" >
+                    <Link href="">
+                        <LayoutGridIcon />
+                         Dashboard
+                    </Link>
+                </Button>
+                <Button asChild variant="ghost" className="justify-start gap-2" >
+                     <Link href="">
+                        <PackageIcon />
+                        Produtos
+                    </Link>
+                </Button>
+                <Button asChild variant="ghost" className="justify-start gap-2" >
+                     <Link href="">
+                        <ShoppingBasketIcon />
+                        Vendas
+                    </Link>
+                </Button>
             </div>
         </div>
     )
